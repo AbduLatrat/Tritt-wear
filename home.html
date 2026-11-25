@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TRITT — Menswear Wear Archive</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="tritt-logo.png">
+</head>
+<body>
+  <div class="topbar">Private showroom · All TRITT archive pieces · Worldwide inquiries</div>
+  <header class="header">
+    <div class="nav">
+      <a class="brand" href="shop.html" aria-label="TRITT home"><img src="tritt-logo.png" alt="TRITT"></a>
+      <nav class="navlinks" id="mobilelinks"><a href="#collection" onclick="setFilter('all')">Wear Archive</a><a href="#collection" onclick="setFilter('polos')">Polos</a><a href="#collection" onclick="setFilter('zip-polos')">Zip Polos</a><a href="#collection" onclick="setFilter('outerwear')">Outerwear</a><a href="#private-inquiry">Inquiry</a></nav>
+      <div class="navsearch"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l5 5"></path></svg><input id="nav-search" type="search" placeholder="Search here" aria-label="Search the archive"></div>
+      <div class="actions">
+        <button class="iconbtn mobile-search" onclick="toggleSearch()" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l5 5"></path></svg></button>
+        <button class="iconbtn bag" onclick="openDrawer()" aria-label="Open inquiry list"><svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg><span class="badge" id="badge">0</span></button>
+        <button class="iconbtn mobilemenu" onclick="toggleMenu()" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </div>
+    </div>
+    <div class="searchbar" id="searchbar"><div class="searchwrap"><span>⌕</span><input id="search" type="search" placeholder="Search archive, reference, category or fabric"><button onclick="clearSearch()">Clear</button></div></div>
+  </header>
+  <section class="hero">
+    <div class="hero-copy"><span class="eyebrow">TRITT Wear Archive 2026</span><h1>Modern Men.<em>Infinite Style.</em></h1><p>Explore every TRITT piece in the complete menswear archive. Browse knitwear, polos, outerwear and tailored looks, then select pieces for a private price inquiry.</p><div class="herobtns"><a class="primary" href="#collection">Explore every photo</a><a class="secondary" href="#private-inquiry">Private inquiry</a></div></div>
+    <div class="hero-images"><div class="hero-card"><img src="tritt(1).jpg" alt="TRITT archive look 1"><div class="hero-caption"><span class="eyebrow">Plate 01</span><h3>Signature Riviera Polo</h3><button onclick="openModal(1)">Inquire</button></div></div><div class="hero-card"><img src="tritt(2).jpg" alt="TRITT archive look 2"><div class="hero-caption"><span class="eyebrow">Plate 02</span><h3>Alabaster Knit Blouson</h3><button onclick="openModal(2)">Inquire</button></div></div></div>
+  </section>
+  <main class="archive" id="collection">
+    <div class="sectionhead"><div><span class="eyebrow">Complete photograph collection</span><h2>The Wear Archive</h2></div><div class="archive-tools"><span id="count"></span><select class="sort" onchange="handleSort(this.value)"><option value="plate">Plate 01–72</option><option value="desc">Plate 72–01</option><option value="name">Name A–Z</option></select></div></div>
+    <div class="filters"><button class="filter active" data-filter="all">All 72</button><button class="filter" data-filter="polos">Knit & Button Polos</button><button class="filter" data-filter="zip-polos">Quarter-Zip Polos</button><button class="filter" data-filter="outerwear">Outerwear & Cardigans</button><button class="filter" data-filter="tees">Crest Tees</button><button class="filter" data-filter="tailored">Tailored Wear</button></div>
+    <div class="grid" id="grid"></div><div class="empty" id="empty"><h2>No matching pieces found</h2><button class="primary" onclick="clearSearch();setFilter('all')">Show complete archive</button></div>
+  </main>
+  <section class="story"><div class="storyinner"><div><span class="eyebrow">TRITT standard</span><h2>Made to distinguish.</h2></div><div class="pillars"><article class="pillar"><span class="eyebrow">01</span><h3>Fine-Gauge Knitwear</h3><p>Soft, structured fabrics selected for clean drape and lasting comfort.</p></article><article class="pillar"><span class="eyebrow">02</span><h3>Architectural Proportion</h3><p>Defined collars, measured silhouettes and considered finishing on every piece.</p></article><article class="pillar"><span class="eyebrow">03</span><h3>The Infinity Crest</h3><p>The unmistakable TRITT mark represents craft, confidence and infinite possibility.</p></article></div></div></section>
+  <section class="inquiry-section" id="private-inquiry"><div><span class="eyebrow">Private client concierge</span><h2>Request availability & price.</h2><p>Send one piece or build a multi-piece dossier directly from the archive.</p><p><strong>Selected pieces:</strong><br><span id="summary">No pieces selected</span></p></div><form class="inquiryform" onsubmit="handleInquiry(event)"><div class="row"><div class="field"><label for="name">Full name *</label><input id="name" required></div><div class="field"><label for="email">Email *</label><input id="email" type="email" required></div></div><div class="row"><div class="field"><label for="refs">Reference codes</label><input id="refs" placeholder="TR-001, TR-014"></div><div class="field"><label for="preferredsize">Size</label><select id="preferredsize"><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>XXL</option><option>Bespoke</option></select></div></div><div class="field"><label for="notes">Inquiry notes</label><textarea id="notes" rows="5" placeholder="Please share pricing, availability and delivery details."></textarea></div><div class="formbuttons"><button class="primary" type="submit">Send email inquiry</button><button class="secondary" type="button" onclick="copyInquiry()">Copy inquiry</button></div></form></section>
+  <footer class="footer"><div class="footerinner"><div class="footergrid"><div><img src="tritt-logo.png" alt="TRITT"><p>Luxury menswear, contemporary confidence and timeless proportion.</p></div><div><b>Archive</b><p><a href="#collection" onclick="setFilter('all')">All 72 pieces</a></p><p><a href="#collection" onclick="setFilter('polos')">Polos</a></p><p><a href="#collection" onclick="setFilter('outerwear')">Outerwear</a></p></div><div><b>Contact</b><p><a href="mailto:inquiries@trittwear.com">inquiries@trittwear.com</a></p></div></div><p>© 2026 TRITT Menswear</p></div></footer>
+  <div class="modalback" id="modalback" onclick="closeModal()"></div><div class="modal" id="modal"><button class="close" onclick="closeModal()">×</button><div class="modalimg"><img id="modalimg" alt="TRITT piece"></div><div class="modalcopy"><span class="eyebrow" id="modalref"></span><h2 id="modaltitle"></h2><p id="modalfabric"></p><p>Private showroom piece · Pricing via email</p><label><strong>Preferred size</strong></label><div class="sizes"><button onclick="selectSize('S')">S</button><button class="active" onclick="selectSize('M')">M</button><button onclick="selectSize('L')">L</button><button onclick="selectSize('XL')">XL</button><button onclick="selectSize('XXL')">XXL</button></div><div class="modalactions"><a class="primary" id="modalmailto">Inquire by email</a><button class="secondary" onclick="addModalToInquiry()">Add to inquiry list</button></div></div></div>
+  <div class="drawerback" id="drawerback" onclick="closeDrawer()"></div><aside class="drawer" id="drawer"><div class="drawerhead"><h2>Inquiry list</h2><p id="drawercount">0 selected</p><button class="close" onclick="closeDrawer()">×</button></div><div class="draweritems" id="draweritems"></div><div class="drawerfoot"><a class="primary" id="drawermail">Send email inquiry</a><br><br><button class="secondary" onclick="copyDossier()">Copy selected references</button></div></aside>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
