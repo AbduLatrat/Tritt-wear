@@ -3,30 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#151515" />
-  <title>TRITT — Infinite Possibilities | Luxury Menswear Archive</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#141414" />
+  <title>TRITT — Infinite Possibilities | Luxury Menswear Lookbook & Private Showroom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="tritt-logo.png" />
   <link rel="shortcut icon" type="image/png" href="tritt-logo.png" />
   <link rel="apple-touch-icon" href="tritt-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            alabaster: '#FAF8F5',
+            oatmeal: '#EFECE6',
+            sandstone: '#E4DFD5',
+            obsidian: '#141414',
+            charcoal: '#2C2C2C',
+            muted: '#6E6A63',
+            olive: '#5A634E',
+            navy: '#1D2A3A',
+            crimson: '#D91E2A',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            serif: ['"Lora"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #141414;
+      font-family: 'Lora', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 116px;
+    }
+    @media (max-width: 639px) {
+      body { padding-top: 108px; }
+    }
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-classic-body {
+      font-family: 'Lora', Georgia, serif;
+    }
+    .font-label {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .hairline {
+      border-color: #DED9CF;
+    }
+  </style>
 </head>
 <body class="bg-alabaster text-obsidian selection:bg-crimson selection:text-white overflow-x-hidden">
 
   <!-- Top Editorial Showroom Dispatch Bar -->
-  <div class="bg-obsidian text-alabaster font-label text-[10px] sm:text-[11px] tracking-[0.22em] uppercase py-2.5 px-4 text-center border-b border-charcoal">
-    <span>TRITT PRIVATE SHOWROOM • 72-PIECE HERITAGE ARCHIVE • PRIVATE PRICE & BESPOKE INQUIRIES VIA EMAIL</span>
+  <div id="topbar" class="fixed top-0 left-0 right-0 z-[70] bg-obsidian text-alabaster font-label text-[10px] sm:text-[11px] tracking-[0.22em] uppercase py-2.5 px-4 text-center border-b border-charcoal">
+    <span>TRITT PRIVATE SHOWROOM • 72-PIECE HERITAGE ARCHIVE • PRIVATE PRICE &amp; BESPOKE INQUIRIES VIA EMAIL</span>
   </div>
 
   <!-- Minimalist Architectural Header -->
-  <header class="sticky top-0 z-40 bg-alabaster/95 backdrop-blur-xs border-b hairline">
+  <header id="main-header" class="fixed top-[36px] left-0 right-0 z-[60] bg-alabaster/95 backdrop-blur-md border-b hairline">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 h-20 flex items-center justify-between gap-4">
       
       <!-- Brand Logo -->
-      <a href="./index.html" class="flex items-center gap-3 group focus:outline-none" aria-label="TRITT Home">
-        <img src="tritt-logo.png" alt="TRITT — Infinite Possibilities" class="h-14 sm:h-16 w-auto object-contain" />
+      <a href="#top" onclick="resetAllFilters()" class="flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="TRITT Home">
+        <img
+          src="tritt-logo.png"
+          alt="TRITT — Infinite Possibilities"
+          onerror="this.style.display='none'; document.getElementById('fallback-header-logo').classList.remove('hidden');"
+          class="h-12 sm:h-14 w-auto max-w-[150px] object-contain"
+        />
+        <svg id="fallback-header-logo" width="130" height="50" viewBox="0 0 220 86" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-12 w-auto">
+          <path d="M110 24C122 10 144 6 157 18C170 30 166 49 151 54C137 59 123 47 110 34" stroke="#2C2C2C" stroke-width="7.5" stroke-linecap="round"/>
+          <path d="M110 25C96 10 75 7 62 19C49 31 53 49 69 54C84 58 98 46 110 33C122 20 136 8 151 12C167 17 171 35 158 47C145 59 124 56 110 41" stroke="#D91E2A" stroke-width="7.5" stroke-linecap="round"/>
+          <path d="M101 23L119 41" stroke="#D91E2A" stroke-width="7.5" stroke-linecap="round"/>
+          <text x="110" y="72" text-anchor="middle" fill="#D91E2A" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="4.5">TRITT</text>
+          <text x="110" y="83" text-anchor="middle" fill="#141414" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="6.4" letter-spacing="2.3">INFINITE POSSIBILITIES</text>
+        </svg>
       </a>
 
       <!-- Desktop Navigation -->
@@ -35,31 +102,45 @@
         <a href="#lookbook" class="hover:text-crimson transition-colors py-1">Editorial Monograph</a>
         <a href="#craftsmanship" class="hover:text-crimson transition-colors py-1">Atelier Craft</a>
         <a href="#private-inquiry" class="hover:text-crimson transition-colors py-1">Direct Concierge</a>
-        <button onclick="openSizingModal()" class="hover:text-crimson transition-colors py-1 uppercase tracking-[0.18em]">Sizing Chart</button>
+        <button type="button" onclick="openSizingModal()" class="hover:text-crimson transition-colors py-1 uppercase tracking-[0.18em]">Sizing Chart</button>
       </nav>
 
-      <!-- Header Utility Actions -->
+      <!-- Header Utility Actions: live search and inquiry list -->
       <div class="flex items-center gap-2.5 sm:gap-3.5">
-        <!-- Search Toggle -->
-        <button onclick="toggleSearchBar()" class="p-2.5 rounded-lg text-obsidian hover:bg-oatmeal border border-transparent hover:border-[#DED9CF] transition-colors" aria-label="Search Garments" title="Search archive">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <label class="hidden md:flex items-center gap-2 h-11 w-[210px] lg:w-[260px] px-3.5 rounded-full border hairline bg-white/70 focus-within:border-obsidian transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-muted" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20l-3.5-3.5" stroke-linecap="round"></path>
+          </svg>
+          <input
+            id="catalog-search-input"
+            type="search"
+            oninput="handleSearchInput(this.value)"
+            placeholder="Search TR-001, polo, knit..."
+            aria-label="Search the TRITT archive"
+            class="w-full min-w-0 bg-transparent border-0 outline-none font-label text-xs text-obsidian placeholder:text-muted"
+          />
+        </label>
+
+        <!-- Mobile Search Toggle -->
+        <button type="button" onclick="toggleSearchBar()" class="md:hidden flex items-center justify-center w-11 h-11 rounded-full hover:bg-oatmeal text-obsidian" aria-label="Toggle Search">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="7"></circle>
             <path d="M20 20l-3.5-3.5" stroke-linecap="round"></path>
           </svg>
         </button>
 
-        <!-- Private Inquiry Dossier Trigger -->
-        <button onclick="toggleInquiryDrawer(true)" class="flex items-center gap-2.5 bg-obsidian text-alabaster hover:bg-charcoal px-3.5 sm:px-4 py-2.5 rounded-lg font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24">
-            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-            <path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"></path>
+        <button type="button" onclick="toggleInquiryDrawer(true)" class="relative flex items-center justify-center gap-2 h-11 px-3.5 bg-obsidian text-alabaster hover:bg-charcoal rounded-full font-label text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors" aria-label="Open inquiry list">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 8h14l-1 12H6L5 8Z" stroke-linejoin="round"></path>
+            <path d="M9 9V6a3 3 0 0 1 6 0v3" stroke-linecap="round"></path>
+            <path d="M9.5 13h5" stroke-linecap="round"></path>
           </svg>
-          <span class="hidden sm:inline">Inquiry List</span>
-          <span id="inquiry-badge" class="inline-flex items-center justify-center bg-crimson text-white text-[10px] font-bold w-5 h-5 rounded-full">0</span>
+          <span class="hidden sm:inline">Inquiry</span>
+          <span id="inquiry-badge" class="absolute -right-1.5 -top-1.5 inline-flex items-center justify-center bg-crimson text-white text-[9px] font-bold w-5 h-5 rounded-full border-2 border-alabaster">0</span>
         </button>
 
-        <!-- Mobile Menu Button -->
-        <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-lg hover:bg-oatmeal text-obsidian" aria-label="Toggle Menu">
+        <button type="button" onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center w-11 h-11 rounded-full hover:bg-oatmeal text-obsidian" aria-label="Toggle Menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
@@ -67,36 +148,34 @@
       </div>
     </div>
 
-    <!-- Expandable Search Bar -->
-    <div id="header-search-bar" class="hidden border-t hairline bg-oatmeal/90 px-4 sm:px-8 lg:px-12 py-3.5">
-      <div class="max-w-3xl mx-auto flex items-center gap-3">
-        <svg class="w-4 h-4 text-muted shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="7"></circle>
-          <path d="M20 20l-3.5-3.5" stroke-linecap="round"></path>
-        </svg>
+    <!-- Collapsible Mobile Search Bar -->
+    <div id="header-search-bar" class="hidden md:hidden border-t hairline bg-alabaster px-4 py-3">
+      <div class="flex items-center gap-2">
         <input
-          id="catalog-search-input"
-          type="text"
+          id="mobile-search-input"
+          type="search"
           oninput="handleSearchInput(this.value)"
-          placeholder="Search by reference code (e.g., TR-001, TR-045), silhouette, or fabric..."
-          class="w-full bg-transparent font-classic-body text-sm text-obsidian placeholder:text-muted focus:outline-none"
+          placeholder="Search TR-001 through TR-072, polo, wool..."
+          class="w-full bg-oatmeal border hairline rounded-xl px-3.5 py-2.5 font-label text-xs text-obsidian focus:outline-none focus:border-obsidian"
         />
-        <button onclick="clearSearch()" class="font-label text-[11px] uppercase tracking-wider text-muted hover:text-obsidian px-2 py-1">Clear</button>
+        <button type="button" onclick="clearSearch()" class="px-3 py-2.5 rounded-xl bg-oatmeal border hairline font-label text-[10px] font-semibold uppercase tracking-wider text-obsidian">
+          Clear
+        </button>
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-nav" class="hidden lg:hidden border-t hairline bg-alabaster px-6 py-5 space-y-3 font-label text-[11px] font-semibold tracking-[0.18em] uppercase">
-      <a href="#collection" onclick="setFilter('all'); toggleMobileMenu()" class="block py-2 border-b hairline">Complete Archive (72)</a>
-      <a href="#lookbook" onclick="toggleMobileMenu()" class="block py-2 border-b hairline">Editorial Monograph</a>
-      <a href="#craftsmanship" onclick="toggleMobileMenu()" class="block py-2 border-b hairline">Atelier Craft</a>
-      <a href="#private-inquiry" onclick="toggleMobileMenu()" class="block py-2 border-b hairline text-crimson">Direct Email Inquiry</a>
-      <button onclick="openSizingModal(); toggleMobileMenu()" class="block py-2 uppercase tracking-[0.18em] text-left w-full">Tailoring Size Chart</button>
-    </div>
+    <!-- Collapsible Mobile Navigation Menu -->
+    <nav id="mobile-nav" class="hidden lg:hidden border-t hairline bg-alabaster px-6 py-5 space-y-3 font-label text-xs font-semibold tracking-[0.18em] uppercase text-charcoal">
+      <a href="#collection" onclick="setFilter('all'); toggleMobileMenu();" class="block py-2 hover:text-crimson">Complete Archive (72)</a>
+      <a href="#lookbook" onclick="toggleMobileMenu()" class="block py-2 hover:text-crimson">Editorial Monograph</a>
+      <a href="#craftsmanship" onclick="toggleMobileMenu()" class="block py-2 hover:text-crimson">Atelier Craft</a>
+      <a href="#private-inquiry" onclick="toggleMobileMenu()" class="block py-2 hover:text-crimson">Direct Concierge</a>
+      <button type="button" onclick="toggleMobileMenu(); openSizingModal();" class="block w-full text-left py-2 hover:text-crimson uppercase tracking-[0.18em]">Sizing Chart</button>
+    </nav>
   </header>
 
   <!-- Full-Height Architectural Hero Section -->
-  <section class="border-b hairline">
+  <section id="top" class="border-b hairline">
     <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[80vh]">
       
       <!-- Left Classic Editorial Column -->
@@ -104,7 +183,7 @@
         <div class="space-y-6 my-auto">
           <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-oatmeal border hairline font-label text-[10px] font-semibold tracking-[0.22em] uppercase text-charcoal">
             <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
-            <span>Private Showroom & Lookbook</span>
+            <span>Private Showroom &amp; Lookbook</span>
           </div>
 
           <h1 class="font-editorial text-5xl sm:text-6xl xl:text-[66px] font-medium leading-[1.03] tracking-tight text-obsidian">
@@ -159,9 +238,9 @@
             <div>
               <span class="font-label text-[10px] font-bold tracking-[0.18em] uppercase text-crimson">Plate I • Ref. TR-001</span>
               <h2 class="font-editorial text-xl font-semibold text-obsidian leading-tight mt-0.5">Riviera Cable-Knit Button Polo</h2>
-              <p class="font-classic-body italic text-xs text-muted mt-0.5">Price & sizing available upon request</p>
+              <p class="font-classic-body italic text-xs text-muted mt-0.5">Price &amp; sizing available upon request</p>
             </div>
-            <button onclick="openProductModal(1)" class="px-3.5 py-2.5 rounded-lg bg-obsidian text-alabaster font-label text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
+            <button type="button" onclick="openProductModal(1)" class="px-3.5 py-2.5 rounded-lg bg-obsidian text-alabaster font-label text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
               Inquire
             </button>
           </div>
@@ -180,9 +259,9 @@
             <div>
               <span class="font-label text-[10px] font-bold tracking-[0.18em] uppercase text-crimson">Plate II • Ref. TR-002</span>
               <h2 class="font-editorial text-xl font-semibold text-obsidian leading-tight mt-0.5">Alabaster Full-Zip Knit Blouson</h2>
-              <p class="font-classic-body italic text-xs text-muted mt-0.5">Price & sizing available upon request</p>
+              <p class="font-classic-body italic text-xs text-muted mt-0.5">Price &amp; sizing available upon request</p>
             </div>
-            <button onclick="openProductModal(2)" class="px-3.5 py-2.5 rounded-lg bg-obsidian text-alabaster font-label text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
+            <button type="button" onclick="openProductModal(2)" class="px-3.5 py-2.5 rounded-lg bg-obsidian text-alabaster font-label text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
               Inquire
             </button>
           </div>
@@ -215,22 +294,22 @@
 
     <!-- Category Filter Pills -->
     <div class="py-6 flex items-center gap-2.5 overflow-x-auto no-scrollbar border-b hairline" id="filter-bar">
-      <button data-filter="all" onclick="setFilter('all')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-obsidian text-alabaster">
+      <button type="button" data-filter="all" onclick="setFilter('all')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-obsidian text-alabaster">
         All Plates (72)
       </button>
-      <button data-filter="polos" onclick="setFilter('polos')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
-        Knit & Button Polos
+      <button type="button" data-filter="polos" onclick="setFilter('polos')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+        Knit &amp; Button Polos
       </button>
-      <button data-filter="zip-polos" onclick="setFilter('zip-polos')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="zip-polos" onclick="setFilter('zip-polos')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Quarter-Zip Polos
       </button>
-      <button data-filter="outerwear" onclick="setFilter('outerwear')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
-        Outerwear & Cardigans
+      <button type="button" data-filter="outerwear" onclick="setFilter('outerwear')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+        Outerwear &amp; Cardigans
       </button>
-      <button data-filter="tees" onclick="setFilter('tees')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="tees" onclick="setFilter('tees')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Essential Crest Tees
       </button>
-      <button data-filter="tailored" onclick="setFilter('tailored')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="tailored" onclick="setFilter('tailored')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Tailored Wear
       </button>
     </div>
@@ -244,7 +323,7 @@
     <div id="empty-state" class="hidden py-20 text-center space-y-4">
       <p class="font-editorial text-3xl text-obsidian">No archival garments match your inquiry filter.</p>
       <p class="font-classic-body text-sm text-muted">Try searching by reference number (TR-001 through TR-072) or reset the archive view.</p>
-      <button onclick="resetAllFilters()" class="px-6 py-3 rounded-xl bg-obsidian text-alabaster font-label text-[11px] font-semibold tracking-[0.16em] uppercase">
+      <button type="button" onclick="resetAllFilters()" class="px-6 py-3 rounded-xl bg-obsidian text-alabaster font-label text-[11px] font-semibold tracking-[0.16em] uppercase">
         Show All 72 Plates
       </button>
     </div>
@@ -283,7 +362,7 @@
               Fine vertical ribbed cotton knit framed by a contrasting spread collar and brushed silver quarter-zip placket—tailored to sit cleanly beneath an unstructured jacket or stand alone.
             </p>
             <div class="pt-2 flex items-center gap-5">
-              <button onclick="openProductModal(4)" class="font-label text-[11px] font-semibold tracking-[0.16em] uppercase text-obsidian border-b border-obsidian pb-1 hover:text-crimson hover:border-crimson transition-colors">
+              <button type="button" onclick="openProductModal(4)" class="font-label text-[11px] font-semibold tracking-[0.16em] uppercase text-obsidian border-b border-obsidian pb-1 hover:text-crimson hover:border-crimson transition-colors">
                 Request Price via Email →
               </button>
             </div>
@@ -296,7 +375,7 @@
           <div class="bg-alabaster border hairline rounded-2xl overflow-hidden">
             <div class="aspect-[3/4] overflow-hidden bg-sandstone">
               <img
-                src="tritt (7).jpg"
+                src="tritt(7).jpg"
                 alt="TRITT Monograph Plate 07"
                 onerror="handleSmartImageFallback(this, 7, 'TR-007 • Gallery Tailoring')"
                 class="w-full h-full object-cover object-top"
@@ -307,12 +386,12 @@
                 <span class="text-olive">Study II • Gallery Drape</span>
                 <span class="text-muted">Ref. TR-007</span>
               </div>
-              <h3 class="font-editorial text-2xl font-semibold text-obsidian">Architectural Zip & Pleat</h3>
+              <h3 class="font-editorial text-2xl font-semibold text-obsidian">Architectural Zip &amp; Pleat</h3>
               <p class="font-classic-body text-xs sm:text-sm text-muted leading-relaxed">
                 Crisp contrast-trimmed collar paired with fluid pleated tailoring—designed for private evening receptions and refined daytime appointments.
               </p>
               <div class="pt-1">
-                <button onclick="openProductModal(7)" class="font-label text-[11px] font-semibold tracking-[0.16em] uppercase text-obsidian border-b border-obsidian pb-1 hover:text-crimson hover:border-crimson transition-colors">
+                <button type="button" onclick="openProductModal(7)" class="font-label text-[11px] font-semibold tracking-[0.16em] uppercase text-obsidian border-b border-obsidian pb-1 hover:text-crimson hover:border-crimson transition-colors">
                   Request Price via Email →
                 </button>
               </div>
@@ -338,7 +417,7 @@
                 Elongating vertical stripe knitwear inspired by mid-century European resort tailoring, finished with our signature crimson infinity crest.
               </p>
               <div class="pt-1">
-                <button onclick="openProductModal(8)" class="font-label text-[11px] font-semibold tracking-[0.16em] uppercase text-obsidian border-b border-obsidian pb-1 hover:text-crimson hover:border-crimson transition-colors">
+                <button type="button" onclick="openProductModal(8)" class="font-label text-[11px] font-semibold tracking-[0.16em] uppercase text-obsidian border-b border-obsidian pb-1 hover:text-crimson hover:border-crimson transition-colors">
                   Request Price via Email →
                 </button>
               </div>
@@ -396,7 +475,7 @@
       <!-- Left Showroom Contact Info -->
       <div class="lg:col-span-5 space-y-6">
         <p class="font-label text-[11px] font-semibold tracking-[0.22em] uppercase text-crimson">Private Client Concierge</p>
-        <h2 class="font-editorial text-4xl sm:text-5xl font-medium text-obsidian leading-tight">Request Pricing & Private Appointments</h2>
+        <h2 class="font-editorial text-4xl sm:text-5xl font-medium text-obsidian leading-tight">Request Pricing &amp; Private Appointments</h2>
         <p class="font-classic-body text-sm text-muted leading-relaxed">
           TRITT operates as a curated showroom and bespoke menswear house. To receive current pricing, fabric swatches, or size availability for any of our 72 archival pieces, submit an inquiry below or write directly to our client desk.
         </p>
@@ -404,8 +483,8 @@
         <div class="pt-4 border-t hairline space-y-4 font-classic-body text-sm">
           <div>
             <p class="font-label text-[10px] font-bold uppercase tracking-[0.18em] text-muted">Direct Concierge Email</p>
-            <a href="mailto:inquiries@trittwear.com?subject=TRITT%20Menswear%20Price%20%26%20Availability%20Inquiry" class="text-obsidian font-medium hover:text-crimson transition-colors">
-              inquiries@trittwear.com
+            <a href="mailto:trittwear@gmail.com?subject=TRITT%20Menswear%20Price%20%26%20Availability%20Inquiry" class="text-obsidian font-medium hover:text-crimson transition-colors">
+              trittwear@gmail.com
             </a>
           </div>
           <div>
@@ -452,7 +531,7 @@
           </div>
 
           <div>
-            <label for="client-message" class="block font-label text-[10px] font-bold uppercase tracking-[0.18em] text-obsidian mb-2">Inquiry Notes & Delivery City</label>
+            <label for="client-message" class="block font-label text-[10px] font-bold uppercase tracking-[0.18em] text-obsidian mb-2">Inquiry Notes &amp; Delivery City</label>
             <textarea id="client-message" rows="4" placeholder="Please share current pricing, available colorways, and delivery timeline for the selected pieces..." class="w-full bg-oatmeal/60 border hairline rounded-xl px-4 py-3 font-classic-body text-sm text-obsidian focus:outline-none focus:border-obsidian"></textarea>
           </div>
 
@@ -475,15 +554,42 @@
     <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-14 border-b border-charcoal">
         
-        <!-- Brand Manifesto -->
+        <!-- Brand Manifesto & Footer Logo + WhatsApp Direct Inquiry -->
         <div class="lg:col-span-5 space-y-5">
-          <img src="tritt-logo.png" alt="TRITT — Infinite Possibilities" class="h-16 w-auto object-contain" />
+          <a href="#top" class="inline-block focus:outline-none" aria-label="TRITT Home">
+            <img
+              src="tritt-logo.png"
+              alt="TRITT — Infinite Possibilities"
+              onerror="this.style.display='none'; document.getElementById('fallback-footer-logo').classList.remove('hidden');"
+              class="h-14 w-auto max-w-[170px] object-contain"
+            />
+            <svg id="fallback-footer-logo" width="130" height="50" viewBox="0 0 220 86" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-12 w-auto">
+              <path d="M110 24C122 10 144 6 157 18C170 30 166 49 151 54C137 59 123 47 110 34" stroke="#E5E5E5" stroke-width="7.5" stroke-linecap="round"/>
+              <path d="M110 25C96 10 75 7 62 19C49 31 53 49 69 54C84 58 98 46 110 33C122 20 136 8 151 12C167 17 171 35 158 47C145 59 124 56 110 41" stroke="#D91E2A" stroke-width="7.5" stroke-linecap="round"/>
+              <path d="M101 23L119 41" stroke="#D91E2A" stroke-width="7.5" stroke-linecap="round"/>
+              <text x="110" y="72" text-anchor="middle" fill="#D91E2A" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="4.5">TRITT</text>
+              <text x="110" y="83" text-anchor="middle" fill="#FAF8F5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="6.4" letter-spacing="2.3">INFINITE POSSIBILITIES</text>
+            </svg>
+          </a>
           <p class="font-classic-body text-sm text-neutral-400 leading-relaxed max-w-sm">
             Heritage luxury menswear rooted in architectural knitwear, quiet confidence, and timeless proportion. Designed for gentlemen who command presence without noise.
           </p>
           <p class="font-label text-[11px] text-neutral-500 tracking-wider uppercase">
-            Private Showroom • inquiries@trittwear.com
+            Private Showroom • <a href="mailto:trittwear@gmail.com" class="text-neutral-300 hover:text-white transition-colors">trittwear@gmail.com</a>
           </p>
+          <div class="pt-1">
+            <a
+              href="https://wa.me/256771895378?text=Hello%20TRITT%20Menswear%2C%20I%20would%20like%20to%20inquire%20about%20your%20archive%20collection."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#25D366] text-obsidian font-label text-[11px] font-bold tracking-[0.14em] uppercase hover:bg-[#20bd5a] transition-colors"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2Zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2.01.89 2.15.07.15.12.32.02.51-.1.19-.15.32-.29.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.39-.24.66-.15.27.1 1.7.8 1.99.95.29.15.49.22.56.34.07.12.07.7-.17 1.38Z"/>
+              </svg>
+              <span>WhatsApp Inquiry</span>
+            </a>
+          </div>
         </div>
 
         <!-- Navigation Links -->
@@ -491,9 +597,9 @@
           <p class="font-bold text-white mb-4">Archive Index</p>
           <ul class="space-y-2.5 text-neutral-400">
             <li><a href="#collection" onclick="setFilter('all')" class="hover:text-white transition-colors">All 72 Archival Plates</a></li>
-            <li><a href="#collection" onclick="setFilter('polos')" class="hover:text-white transition-colors">Knit & Button Polos</a></li>
+            <li><a href="#collection" onclick="setFilter('polos')" class="hover:text-white transition-colors">Knit &amp; Button Polos</a></li>
             <li><a href="#collection" onclick="setFilter('zip-polos')" class="hover:text-white transition-colors">Quarter-Zip Polos</a></li>
-            <li><a href="#collection" onclick="setFilter('outerwear')" class="hover:text-white transition-colors">Outerwear & Cardigans</a></li>
+            <li><a href="#collection" onclick="setFilter('outerwear')" class="hover:text-white transition-colors">Outerwear &amp; Cardigans</a></li>
             <li><a href="#collection" onclick="setFilter('tees')" class="hover:text-white transition-colors">Essential Crest Tees</a></li>
           </ul>
         </div>
@@ -523,7 +629,7 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-label text-[11px] text-neutral-500 tracking-wider uppercase">
         <p>© 2026 TRITT Menswear. All Rights Reserved.</p>
         <div class="flex items-center gap-6">
-          <button onclick="openSizingModal()" class="hover:text-neutral-300 uppercase">Tailoring Size Chart</button>
+          <button type="button" onclick="openSizingModal()" class="hover:text-neutral-300 uppercase">Tailoring Size Chart</button>
           <span>•</span>
           <a href="#private-inquiry" class="hover:text-neutral-300">Price Inquiries</a>
         </div>
@@ -534,11 +640,11 @@
   <!-- ===================================================================== -->
   <!-- GARMENT DETAIL & EMAIL INQUIRY MODAL                                  -->
   <!-- ===================================================================== -->
-  <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-obsidian/70 backdrop-blur-xs p-4 sm:p-6">
+  <div id="product-modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-obsidian/70 backdrop-blur-xs p-4 sm:p-6">
     <div class="bg-alabaster border hairline rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto grid grid-cols-1 md:grid-cols-12 relative shadow-2xl">
       
       <!-- Close Button -->
-      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-alabaster/90 border hairline flex items-center justify-center text-obsidian hover:bg-obsidian hover:text-alabaster transition-colors" aria-label="Close modal">
+      <button type="button" onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-alabaster/90 border hairline flex items-center justify-center text-obsidian hover:bg-obsidian hover:text-alabaster transition-colors" aria-label="Close modal">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -566,7 +672,7 @@
           </h3>
 
           <p class="font-classic-body italic text-sm text-crimson">
-            Private Showroom Piece — Pricing & availability shared via email
+            Private Showroom Piece — Pricing &amp; availability shared via email
           </p>
 
           <p id="modal-desc" class="font-classic-body text-xs sm:text-sm text-muted leading-relaxed">
@@ -593,7 +699,7 @@
           <div class="pt-3">
             <div class="flex items-center justify-between mb-2.5">
               <span class="font-label text-[10px] font-semibold uppercase tracking-[0.16em] text-obsidian">Preferred Size for Inquiry</span>
-              <button onclick="openSizingModal()" class="font-label text-[10px] underline text-muted hover:text-crimson uppercase tracking-wider">Size Chart</button>
+              <button type="button" onclick="openSizingModal()" class="font-label text-[10px] underline text-muted hover:text-crimson uppercase tracking-wider">Size Chart</button>
             </div>
             <div class="grid grid-cols-5 gap-2" id="modal-size-grid">
               <button type="button" onclick="selectModalSize('S')" class="size-btn py-2.5 rounded-xl border hairline font-label text-xs font-semibold transition-colors">S</button>
@@ -609,7 +715,7 @@
           <a id="modal-direct-mailto" href="#" class="block w-full text-center py-4 rounded-xl bg-obsidian text-alabaster font-label text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-crimson transition-colors">
             Inquire Price via Email Now
           </a>
-          <button onclick="addModalItemToInquiryList()" class="w-full py-3.5 rounded-xl bg-oatmeal border hairline text-obsidian font-label text-[11px] font-semibold tracking-[0.16em] uppercase hover:bg-sandstone transition-colors">
+          <button type="button" onclick="addModalItemToInquiryList()" class="w-full py-3.5 rounded-xl bg-oatmeal border hairline text-obsidian font-label text-[11px] font-semibold tracking-[0.16em] uppercase hover:bg-sandstone transition-colors">
             + Add to Multi-Piece Inquiry List
           </button>
         </div>
@@ -620,14 +726,14 @@
   <!-- ===================================================================== -->
   <!-- BESPOKE SIZING GUIDE MODAL                                            -->
   <!-- ===================================================================== -->
-  <div id="sizing-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-obsidian/70 backdrop-blur-xs p-4">
+  <div id="sizing-modal" class="fixed inset-0 z-[90] hidden items-center justify-center bg-obsidian/70 backdrop-blur-xs p-4">
     <div class="bg-alabaster border hairline rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative space-y-6">
       <div class="flex items-center justify-between border-b hairline pb-4">
         <div>
           <p class="font-label text-[10px] font-bold tracking-[0.2em] uppercase text-crimson">Tailoring Specifications</p>
           <h3 class="font-editorial text-3xl font-semibold text-obsidian">TRITT Menswear Size Chart</h3>
         </div>
-        <button onclick="closeSizingModal()" class="w-9 h-9 rounded-full bg-oatmeal border hairline flex items-center justify-center text-obsidian hover:bg-obsidian hover:text-white">✕</button>
+        <button type="button" onclick="closeSizingModal()" class="w-9 h-9 rounded-full bg-oatmeal border hairline flex items-center justify-center text-obsidian hover:bg-obsidian hover:text-white">✕</button>
       </div>
 
       <p class="font-classic-body text-xs sm:text-sm text-muted leading-relaxed">
@@ -660,8 +766,8 @@
   <!-- ===================================================================== -->
   <!-- SLIDE-OVER MULTI-PIECE INQUIRY DOSSIER DRAWER                         -->
   <!-- ===================================================================== -->
-  <div id="inquiry-drawer-backdrop" onclick="toggleInquiryDrawer(false)" class="fixed inset-0 z-50 hidden bg-obsidian/60 backdrop-blur-xs transition-opacity"></div>
-  <aside id="inquiry-drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-alabaster border-l hairline transform translate-x-full transition-transform duration-300 flex flex-col">
+  <div id="inquiry-drawer-backdrop" onclick="toggleInquiryDrawer(false)" class="fixed inset-0 z-[80] hidden bg-obsidian/60 backdrop-blur-xs transition-opacity"></div>
+  <aside id="inquiry-drawer" class="fixed top-0 right-0 z-[85] h-full w-full max-w-md bg-alabaster border-l hairline transform translate-x-full transition-transform duration-300 flex flex-col">
     
     <!-- Drawer Header -->
     <div class="p-6 border-b hairline flex items-center justify-between">
@@ -669,7 +775,7 @@
         <h3 class="font-editorial text-2xl sm:text-3xl font-semibold text-obsidian">Price Inquiry Dossier</h3>
         <p id="drawer-subtitle" class="font-classic-body text-xs text-muted mt-0.5">0 garments selected for pricing</p>
       </div>
-      <button onclick="toggleInquiryDrawer(false)" class="w-9 h-9 rounded-full bg-oatmeal border hairline flex items-center justify-center text-obsidian hover:bg-obsidian hover:text-white" aria-label="Close dossier">✕</button>
+      <button type="button" onclick="toggleInquiryDrawer(false)" class="w-9 h-9 rounded-full bg-oatmeal border hairline flex items-center justify-center text-obsidian hover:bg-obsidian hover:text-white" aria-label="Close dossier">✕</button>
     </div>
 
     <!-- Drawer Items List -->
@@ -680,21 +786,21 @@
     <!-- Drawer Footer / Send Email Action -->
     <div class="p-6 border-t hairline bg-oatmeal/80 space-y-3">
       <p class="font-classic-body text-xs text-muted leading-relaxed">
-        Send your selected plates directly to <span class="text-obsidian font-medium">inquiries@trittwear.com</span> to receive pricing and availability.
+        Send your selected plates directly to <span class="text-obsidian font-medium">trittwear@gmail.com</span> to receive pricing and availability.
       </p>
 
-      <a id="drawer-mailto-btn" href="mailto:inquiries@trittwear.com" class="block w-full text-center py-4 rounded-xl bg-obsidian text-alabaster font-label text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-crimson transition-colors">
+      <a id="drawer-mailto-btn" href="mailto:trittwear@gmail.com" class="block w-full text-center py-4 rounded-xl bg-obsidian text-alabaster font-label text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-crimson transition-colors">
         Send Email Price Inquiry
       </a>
 
-      <button id="drawer-copy-btn" onclick="copyDossierToClipboard()" class="w-full py-3 rounded-xl bg-alabaster border hairline text-obsidian font-label text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-sandstone transition-colors">
+      <button type="button" id="drawer-copy-btn" onclick="copyDossierToClipboard()" class="w-full py-3 rounded-xl bg-alabaster border hairline text-obsidian font-label text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-sandstone transition-colors">
         Copy Selected References
       </button>
     </div>
   </aside>
 
   <!-- Toast Notification -->
-  <div id="toast-notification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-obsidian text-alabaster px-5 py-3 rounded-xl shadow-lg border border-charcoal font-label text-[11px] font-semibold tracking-wider uppercase flex items-center gap-3">
+  <div id="toast-notification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[95] hidden bg-obsidian text-alabaster px-5 py-3 rounded-xl shadow-lg border border-charcoal font-label text-[11px] font-semibold tracking-wider uppercase flex items-center gap-3">
     <span class="w-2 h-2 rounded-full bg-crimson"></span>
     <span id="toast-message">Added to your TRITT Inquiry List</span>
   </div>
@@ -703,7 +809,7 @@
   <!-- JAVASCRIPT APPLICATION LOGIC & 72-PIECE LOCAL ARCHIVE                 -->
   <!-- ===================================================================== -->
   <script>
-    const ATELIER_EMAIL = 'inquiries@trittwear.com';
+    const ATELIER_EMAIL = 'trittwear@gmail.com';
     let currentFilter = 'all';
     let currentSort = 'plate-asc';
     let searchQuery = '';
@@ -713,11 +819,6 @@
     // Multi-piece Inquiry List State
     let inquiryList = [];
 
-    /**
-     * Featured metadata for the initial plates, followed by structured
-     * curated architectural menswear definitions for all 72 local files:
-     * tritt(1) through tritt(72)
-     */
     const FEATURED_METADATA = {
       1: {
         title: 'Riviera Cable-Knit Button Polo',
@@ -842,8 +943,8 @@
 
     /**
      * Smart Local File Extension Resolver:
-     * Starts with tritt(X).jpg; if your folder uses .png, .jpeg, or .webp,
-     * this automatically tries those extensions before rendering a clean SVG plate fallback.
+     * Tries tritt(X).jpg first, then .png, .jpeg, .webp, .JPG, .PNG before
+     * falling back to an editorial vector plate.
      */
     function handleSmartImageFallback(imgEl, num, label) {
       const step = Number(imgEl.getAttribute('data-fallback-step') || '0');
@@ -855,7 +956,6 @@
         return;
       }
 
-      // Final clean editorial plate SVG if image file is missing in folder
       imgEl.onerror = null;
       const safeLabel = (label || `TR-${String(num).padStart(3, '0')}`).replace(/&/g, '&amp;');
       const svg = `
@@ -956,12 +1056,14 @@
                 <!-- Hover / Tap Showroom Actions -->
                 <div class="absolute inset-x-3 bottom-3 flex items-center gap-2 opacity-100 sm:opacity-0 sm:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <button
+                    type="button"
                     onclick="openProductModal(${product.id})"
                     class="flex-1 py-2.5 px-3 rounded-xl bg-alabaster/95 backdrop-blur-xs text-obsidian border hairline font-label text-[10px] font-semibold tracking-[0.14em] uppercase hover:bg-obsidian hover:text-alabaster transition-colors"
                   >
                     Inspect Plate
                   </button>
                   <button
+                    type="button"
                     onclick="toggleItemInInquiryList(${product.id})"
                     class="py-2.5 px-3.5 rounded-xl ${isSelected ? 'bg-crimson text-white' : 'bg-obsidian text-alabaster hover:bg-crimson'} font-label text-[10px] font-semibold tracking-[0.14em] uppercase transition-colors"
                     title="Add to multi-piece inquiry list"
@@ -1016,14 +1118,15 @@
 
     function handleSearchInput(val) {
       searchQuery = val;
+      const desktopInput = document.getElementById('catalog-search-input');
+      const mobileInput = document.getElementById('mobile-search-input');
+      if (desktopInput && desktopInput.value !== val) desktopInput.value = val;
+      if (mobileInput && mobileInput.value !== val) mobileInput.value = val;
       renderCatalog();
     }
 
     function clearSearch() {
-      searchQuery = '';
-      const input = document.getElementById('catalog-search-input');
-      if (input) input.value = '';
-      renderCatalog();
+      handleSearchInput('');
     }
 
     function resetAllFilters() {
@@ -1035,7 +1138,7 @@
       const bar = document.getElementById('header-search-bar');
       bar.classList.toggle('hidden');
       if (!bar.classList.contains('hidden')) {
-        document.getElementById('catalog-search-input').focus();
+        document.getElementById('mobile-search-input').focus();
       }
     }
 
@@ -1074,7 +1177,7 @@
 
       const modal = document.getElementById('product-modal');
       modal.classList.remove('hidden');
-      modal.classssList.add('flex');
+      modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
     }
 
@@ -1123,7 +1226,7 @@
         showToast('Removed from Inquiry Dossier');
       } else {
         addToInquiryList(productId, 'M');
-                      showToast('Added to Price Inquiry Dossier');
+        showToast('Added to Price Inquiry Dossier');
       }
       renderCatalog();
       renderInquiryDossier();
@@ -1186,7 +1289,6 @@
       subtitle.textContent = `${inquiryList.length} ${inquiryList.length === 1 ? 'plate' : 'plates'} selected for pricing`;
       mailtoBtn.href = buildDossierMailto();
 
-      // Sync with bottom Private Inquiry Form
       if (inquiryList.length > 0) {
         const refSummary = inquiryList.map((i) => `${i.sku} (${i.size})`).join(', ');
         formSummary.textContent = refSummary;
@@ -1201,7 +1303,6 @@
 
       if (inquiryList.length === 0) {
         container.innerHTML = `
-
           <div class="h-full flex flex-col items-center justify-center text-center py-12 space-y-3">
             <p class="font-editorial text-2xl text-obsidian">Your inquiry dossier is empty.</p>
             <p class="font-classic-body text-xs text-muted max-w-xs leading-relaxed">
@@ -1213,8 +1314,7 @@
       }
 
       container.innerHTML = inquiryList
-        .map(
-          (item, idx) => `
+        .map((item, idx) => `
           <div class="flex gap-4 pb-5 border-b hairline">
             <img
               src="${item.image}"
@@ -1226,54 +1326,139 @@
               <div>
                 <div class="flex justify-between gap-2">
                   <span class="font-label text-[10px] font-bold tracking-[0.16em] uppercase text-crimson">${item.sku} • ${item.localBaseName}</span>
-                  <button onclick="removeInquiryItem(${idx})" class="text-xs text-muted hover:text-crimson" aria-label="Remove item">✕</button>
+                  <button type="button" onclick="removeInquiryItem(${idx})" class="text-xs text-muted hover:text-crimson" aria-label="Remove item">✕</button>
                 </div>
                 <h4 class="font-editorial text-lg font-semibold text-obsidian leading-tight mt-0.5">${item.title}</h4>
               </div>
               <p class="font-label text-[10px] uppercase tracking-wider text-muted mt-2">Preferred Size: ${item.size}</p>
             </div>
           </div>
-        `
+        `)
         .join('');
     }
 
-    /**
-     * Newsletter Subscription Handler
-     */
-    async function handleNewsletterSubmit(event) {
-      event.preventDefault();
-      const emailInput = document.getElementById('newsletter-email');
-      const feedbackMsg = document.getElementById('newsletter-feedback');
-      const email = emailInput.value.trim();
-
-      if (!email) return;
-
-      // Simulate server response
-      setTimeout(() => {
-        emailInput.value = '';
-        feedbackMsg.textContent = 'Thank you for subscribing!';
-        feedbackMsg.classList.remove('hidden', 'text-red-500');
-        feedbackMsg.classList.add('text-emerald-400');
-      }, 1000);
+    function toggleInquiryDrawer(open) {
+      const drawer = document.getElementById('inquiry-drawer');
+      const backdrop = document.getElementById('inquiry-drawer-backdrop');
+      if (open) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('translate-x-full');
+        document.body.style.overflow = 'hidden';
+      } else {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('translate-x-full');
+        document.body.style.overflow = '';
+      }
     }
 
     /**
-     * Show Toast Notification
+     * Direct Email Composer Form Handler
      */
-    function showToast(message) {
+    function handleDirectEmailInquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById('client-name').value.trim();
+      const email = document.getElementById('client-email').value.trim();
+      const refs = document.getElementById('client-refs').value.trim() || 'General Archive Inquiry';
+      const size = document.getElementById('client-size').value;
+      const notes = document.getElementById('client-message').value.trim();
+
+      const subject = encodeURIComponent(`TRITT Private Price Inquiry — ${refs} (${name})`);
+      const body = encodeURIComponent(
+        `Hello TRITT Private Client Concierge,\n\n` +
+        `Client Name: ${name}\n` +
+        `Reply Email: ${email}\n` +
+        `Garment Reference(s): ${refs}\n` +
+        `Preferred Size: ${size}\n\n` +
+        `Notes:\n${notes || 'Please share pricing and availability for the referenced TRITT pieces.'}\n\n` +
+        `Warm regards,\n${name}`
+      );
+
+      window.location.href = `mailto:${ATELIER_EMAIL}?subject=${subject}&body=${body}`;
+      showToast('Opening your email client to send inquiry');
+    }
+
+    function copyTextSafely(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(() => {});
+        return;
+      }
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+    }
+
+    function copyDossierToClipboard() {
+      if (inquiryList.length === 0) {
+        showToast('Select at least one plate first');
+        return;
+      }
+      const summary =
+        `TRITT Price Inquiry (${ATELIER_EMAIL}):\n` +
+        inquiryList.map((i) => `- ${i.sku} (${i.localBaseName}): ${i.title} [Size ${i.size}]`).join('\n');
+      copyTextSafely(summary);
+      showToast('Inquiry summary copied to clipboard');
+    }
+
+    function copyFullInquiryText() {
+      const name = document.getElementById('client-name').value.trim() || 'Prospective Client';
+      const refs = document.getElementById('client-refs').value.trim() || 'General Collection';
+      const size = document.getElementById('client-size').value;
+      const notes = document.getElementById('client-message').value.trim();
+      const text = `To: ${ATELIER_EMAIL}\nClient: ${name}\nReferences: ${refs}\nSize: ${size}\nNotes: ${notes}`;
+      copyTextSafely(text);
+      showToast('Inquiry details copied to clipboard');
+    }
+
+    /**
+     * Sizing Modal, Newsletter & Toast Helpers
+     */
+    function openSizingModal() {
+      const m = document.getElementById('sizing-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeSizingModal() {
+      const m = document.getElementById('sizing-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('newsletter-email');
+      const feedback = document.getElementById('newsletter-feedback');
+      feedback.textContent = `Registered ${input.value} for TRITT seasonal lookbook dispatches.`;
+      feedback.classList.remove('hidden');
+      input.value = '';
+    }
+
+    let toastTimeout = null;
+    function showToast(msg) {
       const toast = document.getElementById('toast-notification');
-      const messageEl = document.getElementById('toast-message');
-      messageEl.textContent = message;
+      document.getElementById('toast-message').textContent = msg;
       toast.classList.remove('hidden');
-
-      setTimeout(() => {
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
         toast.classList.add('hidden');
-      }, 3000);
+      }, 2800);
     }
 
-    // Initial Catalog Render
-    renderCatalog();
-    renderInquiryDossier();
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCatalog();
+      renderInquiryDossier();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProductModal();
+        closeSizingModal();
+        toggleInquiryDrawer(false);
+      }
+    });
   </script>
 </body>
 </html>
