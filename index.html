@@ -42,10 +42,10 @@
       color: #141414;
       font-family: 'Lora', Georgia, serif;
       -webkit-font-smoothing: antialiased;
-      padding-top: 116px;
+      padding-top: 80px;
     }
-    @media (max-width: 639px) {
-      body { padding-top: 108px; }
+    @media (min-width: 640px) {
+      body { padding-top: 116px; }
     }
     .font-editorial {
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -70,14 +70,14 @@
 </head>
 <body class="bg-alabaster text-obsidian selection:bg-crimson selection:text-white overflow-x-hidden">
 
-  <!-- Top Editorial Showroom Dispatch Bar -->
-  <div id="topbar" class="fixed top-0 left-0 right-0 z-[70] bg-obsidian text-alabaster font-label text-[10px] sm:text-[11px] tracking-[0.22em] uppercase py-2.5 px-4 text-center border-b border-charcoal">
+  <!-- Top Editorial Showroom Dispatch Bar (Hidden on mobile so navigation sits cleanly at top) -->
+  <div id="topbar" class="hidden sm:block fixed top-0 left-0 right-0 z-[70] bg-obsidian text-alabaster font-label text-[10px] sm:text-[11px] tracking-[0.22em] uppercase py-2.5 px-4 text-center border-b border-charcoal">
     <span>TRITT PRIVATE SHOWROOM • 72-PIECE HERITAGE ARCHIVE • PRIVATE PRICE &amp; BESPOKE INQUIRIES VIA EMAIL</span>
   </div>
 
   <!-- Minimalist Architectural Header -->
-  <header id="main-header" class="fixed top-[36px] left-0 right-0 z-[60] bg-alabaster/95 backdrop-blur-md border-b hairline">
-    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 h-20 flex items-center justify-between gap-4">
+  <header id="main-header" class="fixed top-0 sm:top-[36px] left-0 right-0 z-[60] bg-alabaster/95 backdrop-blur-md border-b hairline">
+    <div class="max-w-[1440px] mx-auto px-3 sm:px-8 lg:px-12 h-20 flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Brand Logo -->
       <a href="#top" onclick="resetAllFilters()" class="flex items-center gap-3 shrink-0 group focus:outline-none" aria-label="TRITT Home">
@@ -85,7 +85,7 @@
           src="tritt-logo.png"
           alt="TRITT — Infinite Possibilities"
           onerror="this.style.display='none'; document.getElementById('fallback-header-logo').classList.remove('hidden');"
-          class="h-12 sm:h-14 w-auto max-w-[150px] object-contain"
+          class="h-11 sm:h-14 w-auto max-w-[140px] sm:max-w-[150px] object-contain"
         />
         <svg id="fallback-header-logo" width="130" height="50" viewBox="0 0 220 86" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-12 w-auto">
           <path d="M110 24C122 10 144 6 157 18C170 30 166 49 151 54C137 59 123 47 110 34" stroke="#2C2C2C" stroke-width="7.5" stroke-linecap="round"/>
@@ -106,7 +106,7 @@
       </nav>
 
       <!-- Header Utility Actions: live search and inquiry list -->
-      <div class="flex items-center gap-2.5 sm:gap-3.5">
+      <div class="flex items-center gap-1.5 sm:gap-3.5">
         <label class="hidden md:flex items-center gap-2 h-11 w-[210px] lg:w-[260px] px-3.5 rounded-full border hairline bg-white/70 focus-within:border-obsidian transition-colors">
           <svg class="w-4 h-4 shrink-0 text-muted" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="7"></circle>
@@ -123,14 +123,14 @@
         </label>
 
         <!-- Mobile Search Toggle -->
-        <button type="button" onclick="toggleSearchBar()" class="md:hidden flex items-center justify-center w-11 h-11 rounded-full hover:bg-oatmeal text-obsidian" aria-label="Toggle Search">
+        <button type="button" onclick="toggleSearchBar()" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-oatmeal text-obsidian" aria-label="Toggle Search">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="7"></circle>
             <path d="M20 20l-3.5-3.5" stroke-linecap="round"></path>
           </svg>
         </button>
 
-        <button type="button" onclick="toggleInquiryDrawer(true)" class="relative flex items-center justify-center gap-2 h-11 px-3.5 bg-obsidian text-alabaster hover:bg-charcoal rounded-full font-label text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors" aria-label="Open inquiry list">
+        <button type="button" onclick="toggleInquiryDrawer(true)" class="relative flex items-center justify-center gap-2 h-10 sm:h-11 px-3 sm:px-3.5 bg-obsidian text-alabaster hover:bg-charcoal rounded-full font-label text-[11px] font-semibold tracking-[0.12em] uppercase transition-colors" aria-label="Open inquiry list">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 8h14l-1 12H6L5 8Z" stroke-linejoin="round"></path>
             <path d="M9 9V6a3 3 0 0 1 6 0v3" stroke-linecap="round"></path>
@@ -140,7 +140,7 @@
           <span id="inquiry-badge" class="absolute -right-1.5 -top-1.5 inline-flex items-center justify-center bg-crimson text-white text-[9px] font-bold w-5 h-5 rounded-full border-2 border-alabaster">0</span>
         </button>
 
-        <button type="button" onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center w-11 h-11 rounded-full hover:bg-oatmeal text-obsidian" aria-label="Toggle Menu">
+        <button type="button" onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-oatmeal text-obsidian" aria-label="Toggle Menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"></path>
           </svg>
@@ -176,57 +176,57 @@
 
   <!-- Full-Height Architectural Hero Section -->
   <section id="top" class="border-b hairline">
-    <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 min-h-[80vh]">
+    <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 lg:min-h-[80vh]">
       
       <!-- Left Classic Editorial Column -->
-      <div class="lg:col-span-5 flex flex-col justify-between p-6 sm:p-10 lg:p-14 xl:p-16 border-b lg:border-b-0 lg:border-r hairline bg-alabaster">
-        <div class="space-y-6 my-auto">
+      <div class="lg:col-span-5 flex flex-col justify-between p-5 sm:p-10 lg:p-14 xl:p-16 border-b lg:border-b-0 lg:border-r hairline bg-alabaster">
+        <div class="space-y-4 sm:space-y-6 my-auto">
           <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-oatmeal border hairline font-label text-[10px] font-semibold tracking-[0.22em] uppercase text-charcoal">
             <span class="w-1.5 h-1.5 rounded-full bg-crimson"></span>
             <span>Private Showroom &amp; Lookbook</span>
           </div>
 
-          <h1 class="font-editorial text-5xl sm:text-6xl xl:text-[66px] font-medium leading-[1.03] tracking-tight text-obsidian">
+          <h1 class="font-editorial text-4xl sm:text-6xl xl:text-[66px] font-medium leading-[1.03] tracking-tight text-obsidian">
             Timeless Proportion.<br />
             <span class="italic font-normal text-charcoal">Infinite Possibilities.</span>
           </h1>
 
-          <p class="font-classic-body text-sm sm:text-[15px] text-muted leading-relaxed max-w-md">
+          <p class="font-classic-body text-xs sm:text-[15px] text-muted leading-relaxed max-w-md">
             An archival presentation of seventy-two signature menswear pieces—pairing structured contrast collars, fine-gauge cable knits, and mercerized cotton with the crimson TRITT crest. Select any garment to request private pricing and bespoke sizing directly from our atelier.
           </p>
 
-          <div class="pt-2 flex flex-wrap items-center gap-3.5">
-            <a href="#collection" class="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-obsidian text-alabaster font-label text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-charcoal transition-colors">
+          <div class="pt-1 sm:pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3.5">
+            <a href="#collection" class="inline-flex items-center justify-center px-5 sm:px-7 py-3 sm:py-4 rounded-xl bg-obsidian text-alabaster font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.16em] sm:tracking-[0.18em] uppercase hover:bg-charcoal transition-colors">
               Browse 72-Piece Archive
             </a>
-            <a href="#private-inquiry" class="inline-flex items-center justify-center px-6 py-4 rounded-xl bg-oatmeal text-obsidian border hairline font-label text-[11px] font-semibold tracking-[0.18em] uppercase hover:bg-sandstone transition-colors">
+            <a href="#private-inquiry" class="inline-flex items-center justify-center px-5 sm:px-6 py-3 sm:py-4 rounded-xl bg-oatmeal text-obsidian border hairline font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.16em] sm:tracking-[0.18em] uppercase hover:bg-sandstone transition-colors">
               Inquire via Email
             </a>
           </div>
         </div>
 
         <!-- Architectural Showroom Metrics -->
-        <div class="pt-10 mt-10 border-t hairline grid grid-cols-3 gap-4">
+        <div class="pt-6 mt-6 sm:pt-10 sm:mt-10 border-t hairline grid grid-cols-3 gap-4">
           <div>
-            <p class="font-editorial text-3xl sm:text-4xl font-semibold text-obsidian">72</p>
-            <p class="font-label text-[10px] uppercase tracking-[0.16em] text-muted mt-0.5">Archival Looks</p>
+            <p class="font-editorial text-2xl sm:text-4xl font-semibold text-obsidian">72</p>
+            <p class="font-label text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-muted mt-0.5">Archival Looks</p>
           </div>
           <div>
-            <p class="font-editorial text-3xl sm:text-4xl font-semibold text-obsidian">16-GG</p>
-            <p class="font-label text-[10px] uppercase tracking-[0.16em] text-muted mt-0.5">Fine Gauge Knit</p>
+            <p class="font-editorial text-2xl sm:text-4xl font-semibold text-obsidian">16-GG</p>
+            <p class="font-label text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-muted mt-0.5">Fine Gauge Knit</p>
           </div>
           <div>
-            <p class="font-editorial text-3xl sm:text-4xl font-semibold text-obsidian">24h</p>
-            <p class="font-label text-[10px] uppercase tracking-[0.16em] text-muted mt-0.5">Atelier Response</p>
+            <p class="font-editorial text-2xl sm:text-4xl font-semibold text-obsidian">24h</p>
+            <p class="font-label text-[9px] sm:text-[10px] uppercase tracking-[0.16em] text-muted mt-0.5">Atelier Response</p>
           </div>
         </div>
       </div>
 
-      <!-- Right Split Garment Showcase (Referencing local tritt(1) & tritt(2)) -->
-      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 bg-oatmeal">
+      <!-- Right Split Garment Showcase (3 columns on mobile so multiple looks show at once) -->
+      <div class="lg:col-span-7 grid grid-cols-3 sm:grid-cols-2 bg-oatmeal">
         
         <!-- Hero Look 01: tritt(1) -->
-        <div class="relative group overflow-hidden border-b sm:border-b-0 sm:border-r hairline aspect-[3/4] sm:aspect-auto">
+        <div class="relative group overflow-hidden border-r hairline aspect-[3/4] sm:aspect-auto">
           <img
             src="tritt(1).jpg"
             data-index="1"
@@ -234,20 +234,20 @@
             onerror="handleSmartImageFallback(this, 1, 'TR-001 • Riviera Cable-Knit')"
             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
           />
-          <div class="absolute inset-x-4 bottom-4 bg-alabaster/95 backdrop-blur-xs border hairline rounded-xl p-4 flex items-center justify-between gap-3">
-            <div>
-              <span class="font-label text-[10px] font-bold tracking-[0.18em] uppercase text-crimson">Plate I • Ref. TR-001</span>
-              <h2 class="font-editorial text-xl font-semibold text-obsidian leading-tight mt-0.5">Riviera Cable-Knit Button Polo</h2>
-              <p class="font-classic-body italic text-xs text-muted mt-0.5">Price &amp; sizing available upon request</p>
+          <div class="absolute inset-x-1.5 sm:inset-x-4 bottom-1.5 sm:bottom-4 bg-alabaster/95 backdrop-blur-xs border hairline rounded-lg sm:rounded-xl p-1.5 sm:p-4 flex items-center justify-between gap-1.5 sm:gap-3">
+            <div class="min-w-0">
+              <span class="hidden sm:block font-label text-[10px] font-bold tracking-[0.18em] uppercase text-crimson">Plate I • Ref. TR-001</span>
+              <h2 class="font-editorial text-xs sm:text-xl font-semibold text-obsidian leading-tight sm:mt-0.5 truncate">Riviera Cable-Knit Button Polo</h2>
+              <p class="hidden sm:block font-classic-body italic text-xs text-muted mt-0.5">Price &amp; sizing available upon request</p>
             </div>
-            <button type="button" onclick="openProductModal(1)" class="px-3.5 py-2.5 rounded-lg bg-obsidian text-alabaster font-label text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
+            <button type="button" onclick="openProductModal(1)" class="px-2 sm:px-3.5 py-1 sm:py-2.5 rounded-md sm:rounded-lg bg-obsidian text-alabaster font-label text-[8px] sm:text-[10px] font-semibold tracking-[0.1em] sm:tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
               Inquire
             </button>
           </div>
         </div>
 
         <!-- Hero Look 02: tritt(2) -->
-        <div class="relative group overflow-hidden aspect-[3/4] sm:aspect-auto">
+        <div class="relative group overflow-hidden border-r sm:border-r-0 hairline aspect-[3/4] sm:aspect-auto">
           <img
             src="tritt(2).jpg"
             data-index="2"
@@ -255,13 +255,32 @@
             onerror="handleSmartImageFallback(this, 2, 'TR-002 • Alabaster Knit Blouson')"
             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
           />
-          <div class="absolute inset-x-4 bottom-4 bg-alabaster/95 backdrop-blur-xs border hairline rounded-xl p-4 flex items-center justify-between gap-3">
-            <div>
-              <span class="font-label text-[10px] font-bold tracking-[0.18em] uppercase text-crimson">Plate II • Ref. TR-002</span>
-              <h2 class="font-editorial text-xl font-semibold text-obsidian leading-tight mt-0.5">Alabaster Full-Zip Knit Blouson</h2>
-              <p class="font-classic-body italic text-xs text-muted mt-0.5">Price &amp; sizing available upon request</p>
+          <div class="absolute inset-x-1.5 sm:inset-x-4 bottom-1.5 sm:bottom-4 bg-alabaster/95 backdrop-blur-xs border hairline rounded-lg sm:rounded-xl p-1.5 sm:p-4 flex items-center justify-between gap-1.5 sm:gap-3">
+            <div class="min-w-0">
+              <span class="hidden sm:block font-label text-[10px] font-bold tracking-[0.18em] uppercase text-crimson">Plate II • Ref. TR-002</span>
+              <h2 class="font-editorial text-xs sm:text-xl font-semibold text-obsidian leading-tight sm:mt-0.5 truncate">Alabaster Full-Zip Knit Blouson</h2>
+              <p class="hidden sm:block font-classic-body italic text-xs text-muted mt-0.5">Price &amp; sizing available upon request</p>
             </div>
-            <button type="button" onclick="openProductModal(2)" class="px-3.5 py-2.5 rounded-lg bg-obsidian text-alabaster font-label text-[10px] font-semibold tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
+            <button type="button" onclick="openProductModal(2)" class="px-2 sm:px-3.5 py-1 sm:py-2.5 rounded-md sm:rounded-lg bg-obsidian text-alabaster font-label text-[8px] sm:text-[10px] font-semibold tracking-[0.1em] sm:tracking-[0.15em] uppercase hover:bg-crimson transition-colors shrink-0">
+              Inquire
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Look 03 on mobile: tritt(3) -->
+        <div class="relative group overflow-hidden sm:hidden aspect-[3/4]">
+          <img
+            src="tritt(3).jpg"
+            data-index="3"
+            alt="TRITT Archival Look 03 — tritt(3)"
+            onerror="handleSmartImageFallback(this, 3, 'TR-003 • Noir Zip Polo')"
+            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+          <div class="absolute inset-x-1.5 bottom-1.5 bg-alabaster/95 backdrop-blur-xs border hairline rounded-lg p-1.5 flex items-center justify-between gap-1.5">
+            <div class="min-w-0">
+              <h2 class="font-editorial text-xs font-semibold text-obsidian leading-tight truncate">Noir Contrast Zip Polo</h2>
+            </div>
+            <button type="button" onclick="openProductModal(3)" class="px-2 py-1 rounded-md bg-obsidian text-alabaster font-label text-[8px] font-semibold tracking-[0.1em] uppercase hover:bg-crimson transition-colors shrink-0">
               Inquire
             </button>
           </div>
@@ -272,19 +291,19 @@
   </section>
 
   <!-- Main 72-Piece Interactive Showroom Catalog -->
-  <section id="collection" class="py-16 sm:py-24 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+  <section id="collection" class="py-10 sm:py-24 max-w-[1440px] mx-auto px-3 sm:px-8 lg:px-12">
     
     <!-- Section Heading & View Controls -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b hairline">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-5 sm:pb-8 border-b hairline">
       <div>
-        <p class="font-label text-[11px] font-semibold tracking-[0.22em] uppercase text-crimson mb-2">Complete Showroom Catalog • Plates 01 – 72</p>
-        <h2 class="font-editorial text-4xl sm:text-5xl font-medium text-obsidian tracking-tight">The TRITT Menswear Archive</h2>
+        <p class="font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] sm:tracking-[0.22em] uppercase text-crimson mb-1 sm:mb-2">Complete Showroom Catalog • Plates 01 – 72</p>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-medium text-obsidian tracking-tight">The TRITT Menswear Archive</h2>
       </div>
 
-      <div class="flex flex-wrap items-center gap-3">
-        <span id="visible-count-label" class="font-label text-[11px] text-muted tracking-wider uppercase mr-2">Showing 72 of 72 garments</span>
+      <div class="flex flex-wrap items-center justify-between sm:justify-start gap-2.5 sm:gap-3">
+        <span id="visible-count-label" class="font-label text-[10px] sm:text-[11px] text-muted tracking-wider uppercase mr-1 sm:mr-2">Showing 72 of 72 garments</span>
         <label for="sort-select" class="sr-only">Sort archive</label>
-        <select id="sort-select" onchange="handleSortChange(this.value)" class="bg-oatmeal border hairline rounded-xl px-4 py-2.5 font-label text-[11px] font-semibold tracking-wider uppercase text-obsidian focus:outline-none focus:border-obsidian cursor-pointer">
+        <select id="sort-select" onchange="handleSortChange(this.value)" class="bg-oatmeal border hairline rounded-xl px-3 sm:px-4 py-2 sm:py-2.5 font-label text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-obsidian focus:outline-none focus:border-obsidian cursor-pointer">
           <option value="plate-asc">Order: Plate 01 → 72</option>
           <option value="plate-desc">Order: Plate 72 → 01</option>
           <option value="name-asc">Title: A – Z</option>
@@ -293,29 +312,29 @@
     </div>
 
     <!-- Category Filter Pills -->
-    <div class="py-6 flex items-center gap-2.5 overflow-x-auto no-scrollbar border-b hairline" id="filter-bar">
-      <button type="button" data-filter="all" onclick="setFilter('all')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-obsidian text-alabaster">
+    <div class="py-4 sm:py-6 flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar border-b hairline" id="filter-bar">
+      <button type="button" data-filter="all" onclick="setFilter('all')" class="filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-obsidian text-alabaster">
         All Plates (72)
       </button>
-      <button type="button" data-filter="polos" onclick="setFilter('polos')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="polos" onclick="setFilter('polos')" class="filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Knit &amp; Button Polos
       </button>
-      <button type="button" data-filter="zip-polos" onclick="setFilter('zip-polos')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="zip-polos" onclick="setFilter('zip-polos')" class="filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Quarter-Zip Polos
       </button>
-      <button type="button" data-filter="outerwear" onclick="setFilter('outerwear')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="outerwear" onclick="setFilter('outerwear')" class="filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Outerwear &amp; Cardigans
       </button>
-      <button type="button" data-filter="tees" onclick="setFilter('tees')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="tees" onclick="setFilter('tees')" class="filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Essential Crest Tees
       </button>
-      <button type="button" data-filter="tailored" onclick="setFilter('tailored')" class="filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
+      <button type="button" data-filter="tailored" onclick="setFilter('tailored')" class="filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone">
         Tailored Wear
       </button>
     </div>
 
-    <!-- 72-Piece Garment Grid -->
-    <div id="product-grid" class="pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-11">
+    <!-- 72-Piece Garment Grid (3 across on mobile so 6+ rows fit comfortably in one mobile view) -->
+    <div id="product-grid" class="pt-5 sm:pt-10 grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2 sm:gap-x-6 gap-y-4 sm:gap-y-11">
       <!-- Rendered dynamically from local tritt(1) through tritt(72) -->
     </div>
 
@@ -1038,7 +1057,7 @@
           return `
             <article class="group flex flex-col">
               <!-- Garment Plate Frame -->
-              <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-oatmeal border hairline mb-4">
+              <div class="relative aspect-[3/4] rounded-lg sm:rounded-2xl overflow-hidden bg-oatmeal border hairline mb-1.5 sm:mb-4">
                 <img
                   src="${product.image}"
                   alt="${product.title} (${product.localBaseName})"
@@ -1049,23 +1068,23 @@
                 />
                 
                 <!-- Plate Number Pill -->
-                <span class="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-md bg-obsidian/90 text-alabaster font-label text-[10px] font-semibold tracking-[0.16em] uppercase">
-                  Plate ${product.plate}
+                <span class="absolute top-1.5 left-1.5 sm:top-3.5 sm:left-3.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-obsidian/90 text-alabaster font-label text-[8px] sm:text-[10px] font-semibold tracking-[0.1em] sm:tracking-[0.16em] uppercase">
+                  #${product.plate}
                 </span>
 
                 <!-- Hover / Tap Showroom Actions -->
-                <div class="absolute inset-x-3 bottom-3 flex items-center gap-2 opacity-100 sm:opacity-0 sm:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                <div class="absolute inset-x-1.5 sm:inset-x-3 bottom-1.5 sm:bottom-3 flex items-center gap-1 sm:gap-2 opacity-100 sm:opacity-0 sm:translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <button
                     type="button"
                     onclick="openProductModal(${product.id})"
-                    class="flex-1 py-2.5 px-3 rounded-xl bg-alabaster/95 backdrop-blur-xs text-obsidian border hairline font-label text-[10px] font-semibold tracking-[0.14em] uppercase hover:bg-obsidian hover:text-alabaster transition-colors"
+                    class="hidden sm:block flex-1 py-2.5 px-3 rounded-xl bg-alabaster/95 backdrop-blur-xs text-obsidian border hairline font-label text-[10px] font-semibold tracking-[0.14em] uppercase hover:bg-obsidian hover:text-alabaster transition-colors"
                   >
                     Inspect Plate
                   </button>
                   <button
                     type="button"
                     onclick="toggleItemInInquiryList(${product.id})"
-                    class="py-2.5 px-3.5 rounded-xl ${isSelected ? 'bg-crimson text-white' : 'bg-obsidian text-alabaster hover:bg-crimson'} font-label text-[10px] font-semibold tracking-[0.14em] uppercase transition-colors"
+                    class="w-full sm:w-auto py-1 sm:py-2.5 px-1.5 sm:px-3.5 rounded-md sm:rounded-xl ${isSelected ? 'bg-crimson text-white' : 'bg-obsidian/95 text-alabaster hover:bg-crimson'} font-label text-[8px] sm:text-[10px] font-semibold tracking-[0.08em] sm:tracking-[0.14em] uppercase transition-colors"
                     title="Add to multi-piece inquiry list"
                   >
                     ${isSelected ? '✓ Listed' : '+ Inquire'}
@@ -1074,18 +1093,18 @@
               </div>
 
               <!-- Classic Editorial Metadata -->
-              <div class="space-y-1">
-                <h3 onclick="openProductModal(${product.id})" class="font-editorial text-xl font-semibold text-obsidian leading-snug cursor-pointer group-hover:text-crimson transition-colors">
+              <div class="space-y-0.5 sm:space-y-1">
+                <h3 onclick="openProductModal(${product.id})" class="font-editorial text-xs sm:text-xl font-semibold text-obsidian leading-tight sm:leading-snug cursor-pointer group-hover:text-crimson transition-colors line-clamp-1 sm:line-clamp-none">
                   ${product.title}
                 </h3>
-                <p class="font-classic-body text-xs text-muted">${product.fabric}</p>
+                <p class="hidden sm:block font-classic-body text-xs text-muted">${product.fabric}</p>
               </div>
 
-              <div class="mt-3 pt-2.5 border-t hairline flex items-center justify-between gap-2">
-                <a href="${mailtoHref}" class="font-label text-[10px] font-semibold uppercase tracking-[0.15em] text-obsidian hover:text-crimson transition-colors">
-                  Request Price →
+              <div class="mt-1 sm:mt-3 pt-1 sm:pt-2.5 border-t hairline flex items-center justify-between gap-1 sm:gap-2">
+                <a href="${mailtoHref}" class="font-label text-[8px] sm:text-[10px] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.15em] text-obsidian hover:text-crimson transition-colors truncate">
+                  Price →
                 </a>
-                <span class="font-label text-[10px] uppercase tracking-[0.16em] text-muted">${product.sku}</span>
+                <span class="font-label text-[8px] sm:text-[10px] uppercase tracking-[0.08em] sm:tracking-[0.16em] text-muted">${product.sku}</span>
               </div>
             </article>
           `;
@@ -1102,10 +1121,10 @@
         const isMatch = btn.getAttribute('data-filter') === filterKey;
         if (isMatch) {
           btn.className =
-            'filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-obsidian text-alabaster';
+            'filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-obsidian text-alabaster';
         } else {
           btn.className =
-            'filter-pill px-4 py-2.5 rounded-xl font-label text-[11px] font-semibold tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone';
+            'filter-pill px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-label text-[10px] sm:text-[11px] font-semibold tracking-[0.12em] sm:tracking-[0.14em] uppercase transition-colors shrink-0 bg-oatmeal text-obsidian border hairline hover:bg-sandstone';
         }
       });
       renderCatalog();
